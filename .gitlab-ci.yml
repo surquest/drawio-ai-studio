@@ -1,0 +1,22 @@
+image: node:24-alpine
+
+pages:
+  stage: deploy
+  script:
+    - npm ci
+    # We output the environment variables to .env.production at build time.
+    # Make sure you configure these variables in Settings -> CI/CD -> Variables in GitLab.
+    - echo "NEXT_PUBLIC_GOOGLE_CLIENT_ID=$NEXT_PUBLIC_GOOGLE_CLIENT_ID" >> .env.production
+    - echo "NEXT_PUBLIC_GOOGLE_PROJECT_ID=$NEXT_PUBLIC_GOOGLE_PROJECT_ID" >> .env.production
+    - echo "NEXT_PUBLIC_GOOGLE_REGION=$NEXT_PUBLIC_GOOGLE_REGION" >> .env.production
+    - echo "NEXT_PUBLIC_IAP_ENABLED=$NEXT_PUBLIC_IAP_ENABLED" >> .env.production
+    - echo "NEXT_PUBLIC_GEMINI_DEFAULT_MODEL=$NEXT_PUBLIC_GEMINI_DEFAULT_MODEL" >> .env.production
+    - echo "NEXT_PUBLIC_DRAWIO_BASE_URL=$NEXT_PUBLIC_DRAWIO_BASE_URL" >> .env.production
+    - npm run build
+    - rm -rf public
+    - mv out public
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
