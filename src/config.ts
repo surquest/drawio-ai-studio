@@ -99,7 +99,9 @@ export const config = {
       // { id: 'priority', label: 'Priority' }
     ],
     defaultInstructionsPath: '/examples/instructions/default-instructions.md',
+    defaultPromptPath: '/examples/prompts/default-example.md',
     examplePrompts: [
+      { id: 'default', label: 'BIGDOTS Architecture', path: '/examples/prompts/default-example.md' },
       { id: 'auth-flow', label: 'OAuth Auth Flow', path: '/examples/prompts/auth-flow.md' },
       { id: 'microservices', label: 'Microservices Architecture', path: '/examples/prompts/microservices.md' },
     ],

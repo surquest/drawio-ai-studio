@@ -22,8 +22,19 @@ export default function SidebarLeft({
   onGenerate,
 }: SidebarLeftProps) {
   const drawerWidth = config.ui.sidebarWidth;
-  const [prompt, setPrompt] = useState("Create a simple flowchart with 3 steps.");
+  const [prompt, setPrompt] = useState("");
   const [systemInstructions, setSystemInstructions] = useState("");
+
+  useState(() => {
+    // Load default prompt
+    if (config.gemini.defaultPromptPath) {
+      fetch(config.gemini.defaultPromptPath)
+        .then(res => res.text())
+        .then(text => setPrompt(text))
+        .catch(err => console.error("Failed to load default prompt:", err));
+    }
+  });
+
   const [model, setModel] = useState(config.gemini.defaultModel);
   const [thinkingLevel, setThinkingLevel] = useState("medium");
   const [requestTier, setRequestTier] = useState("standard");
