@@ -37,7 +37,7 @@ export const config = {
   },
   gemini: {
     endpointPattern: process.env.NEXT_PUBLIC_GEMINI_ENDPOINT_PATTERN || 'https://aiplatform.googleapis.com/v1/projects/[PROJECT_ID]/locations/[REGION]/publishers/google/models/[MODEL]:generateContent',
-    defaultModel: process.env.NEXT_PUBLIC_GEMINI_DEFAULT_MODEL || 'gemini-2.5-flash',
+    defaultModel: process.env.NEXT_PUBLIC_GEMINI_DEFAULT_MODEL || 'gemini-3.1-flash-lite-preview',
     models: [
       { 
         id: 'gemini-3.1-pro-preview', 
