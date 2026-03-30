@@ -26,7 +26,13 @@ export const config = {
     defaultStyles: {
       appendCustomLibraries: true,
       defaultFonts: ["Verdana", "Helvetica", "Times New Roman"],
-      // All configurations documented here: https://www.diagrams.net/doc/faq/configure-diagram-defaults
+      customFonts: [
+        {
+          fontFamily: "Bai Jamjuree",
+          fontUrl: "https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200;300;400;500;600;700&display=swap"
+        }
+      ],
+      // All configurations documented here: https://www.drawio.com/doc/faq/configure-diagram-editor
     },
   },
   ui: {

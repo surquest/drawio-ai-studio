@@ -75,8 +75,7 @@ export default function ModelConfig({
         </Select>
       </FormControl>
 
-      {(model.includes("gemini-3") ||
-        model.includes("gemini-2.0-flash-thinking")) && (
+      {(model.includes("gemini-3")) && (
         <FormControl fullWidth size="small">
           <InputLabel>Thinking Level</InputLabel>
           <Select

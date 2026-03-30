@@ -20,7 +20,7 @@ const theme = createTheme({
     divider: '#333333', // --border-color
   },
   typography: {
-    fontFamily: ['Inter', 'Roboto', 'sans-serif'].join(','),
+    fontFamily: ['var(--font-bai-jamjuree)', 'Inter', 'Roboto', 'sans-serif'].join(','),
     h1: {
       fontWeight: 800,
       textTransform: 'uppercase',
