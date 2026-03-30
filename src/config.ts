@@ -108,8 +108,8 @@ export const config = {
     defaultPromptPath: '/examples/prompts/default-example.md',
     examplePrompts: [
       { id: 'default', label: 'BIGDOTS Architecture', path: '/examples/prompts/default-example.md' },
-      { id: 'auth-flow', label: 'OAuth Auth Flow', path: '/examples/prompts/auth-flow.md' },
-      { id: 'microservices', label: 'Microservices Architecture', path: '/examples/prompts/microservices.md' },
+      { id: 'dataflow-sql', label: 'Dataflow SQL', path: '/examples/prompts/dataflow-sql.md' },
+      { id: 'solution-architect', label: 'Solution Architect', path: '/examples/prompts/solution-architect.md' },
     ],
     exampleInstructions: [
       { id: 'solution-architect', label: 'Solution Architect', path: '/examples/instructions/solution-architect.md' },
